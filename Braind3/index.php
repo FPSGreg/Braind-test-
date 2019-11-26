@@ -1,10 +1,17 @@
 <?php
 
-if (isset($_POST["fatalerror"])){
 
+    $N = 0;
+    $M = 0;
     $score = 0;
     $N = $_POST["fatalerror"];
+    if ($N == null) {
+        $N = 0;
+    }
     $M = $_POST["wornings"];
+    if ($M == null){
+        $M = 0;
+    }
 
 
             while ($N != 0 OR $M != 0) {
@@ -27,12 +34,6 @@ if (isset($_POST["fatalerror"])){
                 // echo "N=" . $N . " M=". $M;
                 // echo "<br>";
             };
-
-
-   
-
-
-}
 
     if(!isset($stop)){
         echo "минимальное количество коммитов - " . $score;
